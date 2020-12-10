@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    {% include "shared_header.jinja" %}
+    <link rel="stylesheet" href="{{ url_for("static", filename="admin.css") }}">
+</head>
+<body>
+<div class="container-fluid">
+    <form class="form-signin" method="post" enctype="application/x-www-form-urlencoded">
+      <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+        <label for="inputUser">
+            <input type="text" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+        </label>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+</div>
+</body>

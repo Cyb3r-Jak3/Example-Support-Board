@@ -5,7 +5,7 @@ function refresh_all_cards() {
         dataType: "json",
         statusCode: {
             200: function (data){
-                var i;
+                let i;
                 for (i = 0; i < data.length; i++) {
                     update_card_info(data[i])
                 }

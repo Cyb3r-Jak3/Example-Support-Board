@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Controls</title>
+    {% include "shared_header.jinja" %}
+    <link rel="stylesheet" href="{{ url_for("static", filename="admin.css") }}">
+    <script src="{{ url_for("static", filename="admin.js") }}"></script>
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            List of users
+            {% for x in people %}
+            <p> {{ x.id }}</p>
+            {% endfor %}
+
+        </div>
+        <div class="col-3">
+            <form class="text-center add-user" type="add/support">
+                <label>
+                    <input type="text" name="fname" placeholder="First Name" required>
+                </label>
+                <label>
+                    <input type="text" name="lname" placeholder="Last Name" required>
+                </label>
+                <label> User Photo
+                    <input type="file" name="photo">
+                </label>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Add User</button>
+
+            </form>
+            <form class="text-center add-user" type="add/admin">
+                <label> Username
+                    <input type="text" name="userName" placeholder="Username" required>
+                </label>
+                <label> Password
+                    <input type="password" name="password" required>
+                </label>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Add Admin User</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
